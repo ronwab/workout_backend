@@ -7,11 +7,12 @@ require 'rspec/rails'
 require 'database_cleaner'
 require 'capybara/rspec'
 require 'shoulda/matchers'
+require 'support/database_cleaner'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
   config.include FactoryGirl::Syntax::Methods
   # config.include Devise::Test::ControllerHelpers, type: :controller
   config.before(:suite) do
