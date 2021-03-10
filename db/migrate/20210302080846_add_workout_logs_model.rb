@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddWorkoutLogsModel < ActiveRecord::Migration[6.0]
   def change
     create_table :workout_logs do |t|
