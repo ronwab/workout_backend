@@ -20,8 +20,8 @@ class PeopleController < ApplicationController
   def update
     find_person.update(person_params)
     render json: { message: "Person with id #{find_person[:id]} has been updated" }, status: 200
-    rescue  ActiveRecord::RecordNotFound  => e
-      render json: {message: e.message }, status: 404
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { message: e.message }, status: 404
   end
 
   def find_person
