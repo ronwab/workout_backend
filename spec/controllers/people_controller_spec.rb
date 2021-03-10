@@ -45,19 +45,18 @@ RSpec.describe PeopleController, type: :controller do
   end
 
   describe 'people/update' do
-    let(:person) { FactoryGirl.create(:person, id:2, first_name: "Banana")}
-    it "updates the person" do
-      put :update,  params: { id: person.id, first_name: "lalala"  }
+    let(:person) { FactoryGirl.create(:person, id: 2, first_name: 'Banana') }
+    it 'updates the person' do
+      put :update,  params: { id: person.id, first_name: 'lalala' }
       person.reload
       expect(response.status).to eq(200)
-      expect(person.first_name).to eq("lalala")
+      expect(person.first_name).to eq('lalala')
     end
-    it "displays an error if record is not found" do
-
-      put :update,  params: { id: 23, first_name: "lalala"  }
+    it 'displays an error if record is not found' do
+      put :update,  params: { id: 23, first_name: 'lalala' }
       person.reload
       expect(response.status).to eq(404)
-      response_body =JSON.parse(response.body)
+      response_body = JSON.parse(response.body)
       expect(response_body['message']).to eq("Couldn't find Person with 'id'=23")
     end
   end
