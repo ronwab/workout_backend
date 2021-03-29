@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=18da5444785eb7108c65986869703598&zip=33071,us
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 25 Mar 2021 21:27:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '470'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?zip=33071,us"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-80.2601,"lat":26.2435},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":301.64,"feels_like":301.43,"temp_min":300.15,"temp_max":303.15,"pressure":1018,"humidity":69},"visibility":10000,"wind":{"speed":7.2,"deg":140},"clouds":{"all":1},"dt":1616707177,"sys":{"type":1,"id":4167,"country":"US","sunrise":1616671153,"sunset":1616715267},"timezone":-14400,"id":0,"name":"Pompano
+        Beach","cod":200}'
+  recorded_at: Thu, 25 Mar 2021 21:27:57 GMT
+recorded_with: VCR 6.0.0

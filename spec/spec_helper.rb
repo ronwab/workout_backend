@@ -6,6 +6,13 @@ module JsonHelpers
   end
 end
 
+# webmock and vcr
+# require 'rspec/rails'
+require 'webmock/rspec'
+require 'vcr_helper'
+ENV['WEATHER_API_KEY'] ||= 'FakeWeatherkey'
+# ENV["WEATHER_API_KEY"] ||= "18da5444785eb7108c65986869703598"
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
