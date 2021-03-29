@@ -10,8 +10,6 @@ end
 # require 'rspec/rails'
 require 'webmock/rspec'
 require 'vcr_helper'
-ENV['WEATHER_API_KEY'] ||= 'FakeWeatherkey'
-# ENV["WEATHER_API_KEY"] ||= "18da5444785eb7108c65986869703598"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

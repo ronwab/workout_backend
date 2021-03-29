@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.openweathermap.org/data/2.5/weather?appid=18da5444785eb7108c65986869703598&zip=33071,us
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=<FAKEWEATHERKEY>&zip=33071,us
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Thu, 25 Mar 2021 21:27:57 GMT
+      - Mon, 29 Mar 2021 18:07:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -39,7 +39,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"coord":{"lon":-80.2601,"lat":26.2435},"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"base":"stations","main":{"temp":301.64,"feels_like":301.43,"temp_min":300.15,"temp_max":303.15,"pressure":1018,"humidity":69},"visibility":10000,"wind":{"speed":7.2,"deg":140},"clouds":{"all":1},"dt":1616707177,"sys":{"type":1,"id":4167,"country":"US","sunrise":1616671153,"sunset":1616715267},"timezone":-14400,"id":0,"name":"Pompano
+        sky","icon":"01d"}],"base":"stations","main":{"temp":302.51,"feels_like":301.81,"temp_min":301.48,"temp_max":303.71,"pressure":1020,"humidity":54},"visibility":10000,"wind":{"speed":5.66,"deg":90},"clouds":{"all":1},"dt":1617041242,"sys":{"type":1,"id":4167,"country":"US","sunrise":1617016492,"sunset":1617060977},"timezone":-14400,"id":0,"name":"Pompano
         Beach","cod":200}'
-  recorded_at: Thu, 25 Mar 2021 21:27:57 GMT
+  recorded_at: Mon, 29 Mar 2021 18:07:22 GMT
 recorded_with: VCR 6.0.0
