@@ -4,13 +4,14 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
-
+gem 'dotenv-rails', groups: %i[development test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 gem 'pg'
 gem 'rack-cors'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -59,6 +60,12 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'webdrivers'
+
+  # webmocking and vcr stuff
+  gem 'rspec-rails'
+  gem 'rspec-rcv'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

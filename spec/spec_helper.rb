@@ -6,6 +6,11 @@ module JsonHelpers
   end
 end
 
+# webmock and vcr
+# require 'rspec/rails'
+require 'webmock/rspec'
+require 'vcr_helper'
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
