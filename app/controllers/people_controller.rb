@@ -3,7 +3,9 @@
 class PeopleController < ApplicationController
   def create
     new_person = Person.create!(person_params)
-    render json: new_person, status: :created
+    render json: new_person, status: 201
+  rescue ActiveRecord::RecordInvalid => e
+    handleErrors(e)
   end
 
   def index
@@ -29,6 +31,10 @@ class PeopleController < ApplicationController
   end
 
   private
+
+  def handleErrors(e)
+    render json: { message: e.message }, status: 422
+  end
 
   def person_params
     params.permit(:first_name, :last_name, :email_address, :phone)

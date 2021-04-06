@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # call weather endpoint
   get '/get_weather', to: 'workout_logs#get_weather'
 
-  resources :users, param: :_username
+  resources :users, param: :username
+
   post '/auth/login', to: 'authentication#login'
   get '/*a', to: 'application#not_found'
 end

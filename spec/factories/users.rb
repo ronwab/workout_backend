@@ -2,8 +2,15 @@
 
 FactoryGirl.define do
   factory :user do
-    username 'MyString'
-    email 'MyString'
-    password_digest 'MyString'
+    username { Faker::Superhero.power }
+    password 'Password@1'
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    email_address { Faker::Internet.email }
+    phone { Faker::PhoneNumber.phone_number }
+    address { Faker::Address.street_address }
+    city { Faker::Address.city }
+    state { Faker::Address.state }
+    zipcode { Faker::Address.zip_code }
   end
 end
