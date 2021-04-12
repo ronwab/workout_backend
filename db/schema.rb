@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_302_090_244) do
+ActiveRecord::Schema.define(version: 20_210_402_111_629) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 20_210_302_090_244) do
     t.string 'last_name'
     t.string 'email_address'
     t.string 'phone'
+  end
+
+  create_table 'users', force: :cascade do |t|
+    t.string 'username'
+    t.string 'email_address'
+    t.string 'password_digest'
+    t.string 'first_name'
+    t.string 'last_name'
+    t.string 'phone'
+    t.string 'address'
+    t.string 'city'
+    t.string 'state'
+    t.integer 'zipcode'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
   create_table 'workout_logs', force: :cascade do |t|
