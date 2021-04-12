@@ -4,17 +4,15 @@
 
 class UsersController < ApplicationController
   before_action :authorize_request, except: :create
-  before_action :find_user, except: %i[create index]
 
   def index
     all_users = User.all
     render json: all_users, status: 200
   end
 
-  def show
-    render json: find_user, status: 200
-  rescue ActiveRecord::RecordNotFound => e
-    render json: { message: e.message }, status: 404
+  # Route uses @current_user which is from authorize_request
+  def person_detail
+    render json: @current_user, status: 200
   end
 
   def create
@@ -47,12 +45,6 @@ class UsersController < ApplicationController
   def handleErrors(e)
     render json: { message: e.message }, status: 422
   end
-
-  def find_user
-    @user ||= User.find_by_username!(params[:username])
-  rescue ActiveRecord::RecordNotFound
-    render json: { errors: 'User not found' }, status: :not_found
-   end
 
   def user_params
     params.permit(:username, :email_address, :password, :password_confirmation, :first_name, :last_name, :phone, :address, :city, :state, :zipcode)
